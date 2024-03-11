@@ -1,7 +1,15 @@
-POST http://localhost:3000/signin 
+# POST http://localhost:3000/signin
+# Content-Type: application/json
+
+# {
+#     "email": "test@test.com",
+#     "password": "test"
+# }
+
+POST http://localhost:3000/signin
 Content-Type: application/json
 
 {
-    "email": "test@test.com",
-    "password": "test"
+    "email": "tes@something.com",
+    "password": "Test0010??"
 }

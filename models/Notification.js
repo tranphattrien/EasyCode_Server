@@ -1,6 +1,8 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose = require("mongoose");
 
-const notificationSchema = mongoose.Schema(
+const Schema = mongoose.Schema;
+
+const notificationSchema = new Schema(
   {
     type: {
       type: String,
@@ -44,4 +46,4 @@ const notificationSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model("notification", notificationSchema);
+module.exports = mongoose.model("notification", notificationSchema);

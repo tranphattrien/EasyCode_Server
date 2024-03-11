@@ -1,4 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema;
 
 let profile_imgs_name_list = [
   "Garfield",
@@ -29,7 +31,7 @@ let profile_imgs_collections_list = [
   "fun-emoji"
 ];
 
-const userSchema = mongoose.Schema(
+const userSchema = new Schema(
   {
     personal_info: {
       fullname: {
@@ -123,4 +125,4 @@ const userSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model("users", userSchema);
+module.exports = mongoose.model("users", userSchema);

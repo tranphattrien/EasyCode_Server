@@ -1,6 +1,7 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose = require("mongoose");
 
-const blogSchema = mongoose.Schema(
+const Schema = mongoose.Schema;
+const blogSchema = new Schema(
   {
     blog_id: {
       type: String,
@@ -66,5 +67,4 @@ const blogSchema = mongoose.Schema(
     }
   }
 );
-
-export default mongoose.model("blogs", blogSchema);
+module.exports = mongoose.model("blogs", blogSchema);
