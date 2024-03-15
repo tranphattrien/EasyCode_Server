@@ -109,7 +109,10 @@ exports.postSignin = async (req, res) => {
       return res.status(401).json({ error: "Invalid password" });
     }
 
-    return res.status(200).json(fortmatDataToSend(user));
+    return res.status(200).json({
+      status: "Signin successful",
+      user: fortmatDataToSend(user)
+    });
   } catch (error) {
     return res.status(500).json({ error: "Internal server error" });
   }
