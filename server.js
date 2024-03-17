@@ -4,6 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const admin = require("firebase-admin");
 const authRoutes = require("./routes/auth");
+const blogRoutes = require("./routes/blog");
 const serviceAccountKey = require("./serviceAccountKey.json");
 let PORT = 3000;
 
@@ -29,3 +30,4 @@ mongoose
   .catch((err) => console.log(err));
 
 server.use(authRoutes);
+server.use(blogRoutes);

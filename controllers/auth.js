@@ -3,7 +3,6 @@ const User = require("../models/user");
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
 const { getAuth } = require("firebase-admin/auth");
-const user = require("../models/user");
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // regex for email
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
 
@@ -141,7 +140,7 @@ exports.postGoogleAuth = async (req, res) => {
           return u || null;
         })
         .catch((err) => {
-          return res.status(500).json({ err: err.message });
+          return res.status(500).json({ error: err.message });
         });
       if (user) {
         if (!user.google_auth) {

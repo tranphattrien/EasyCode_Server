@@ -6,10 +6,9 @@
 #     "password": "test"
 # }
 
-POST http://localhost:3000/signin
+POST http://localhost:3000/upload
 Content-Type: application/json
 
 {
-    "email": "tes@something.com",
-    "password": "Test0010??"
+    "image": "../frontend/src/imgs/404.png"
 }
