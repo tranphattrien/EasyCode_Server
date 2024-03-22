@@ -47,6 +47,10 @@ const userSchema = new Schema(
         unique: true
       },
       password: String,
+      active: {
+        type: Boolean,
+        default: false // Mặc định là false, tài khoản chưa được kích hoạt
+      },
       username: {
         type: String,
         minlength: [3, "Username must be 3 letters long"],

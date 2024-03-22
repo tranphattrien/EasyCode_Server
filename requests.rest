@@ -6,9 +6,9 @@
 #     "password": "test"
 # }
 
-POST http://localhost:3000/upload
+POST http://localhost:3000/activation
 Content-Type: application/json
 
 {
-    "image": "../frontend/src/imgs/404.png"
+    "activation_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWZkYTRlMjY4NDAzOThlMjJmN2Y4YWUiLCJpYXQiOjE3MTExMjE2MzQsImV4cCI6MTcxMTIwODAzNH0.XdglcGuxOT5EdPjMbHpUAIre74sMJg1WnCpI79VhWIQ"
 }
