@@ -14,7 +14,6 @@ const storage = new CloudinaryStorage({
   params: {
     folder: "EasyCode-Blogging",
     allowed_formats: ["jpg", "jpeg", "png"],
-    // transformation: [{ width: 500, height: 500, crop: "limit" }]
     transformation: [{ width: "auto", quality: "auto", fetch_format: "auto" }]
   }
 });
