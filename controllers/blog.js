@@ -108,3 +108,21 @@ exports.postCreateBlog = (req, res) => {
       return res.status(500).json({ error: error.message });
     });
 };
+
+exports.getLastestBlogs = (req, res) => {
+  let maxLimit = 5;
+  Blog.find({ draft: false })
+    .populate(
+      "author",
+      "personal_info.profile.img personal_info.username personal_info.fullname -_id"
+    )
+    .sort({ publishedAt: -1 })
+    .select("blog_id title des banner activity tags publishedAt -_id")
+    .limit(maxLimit)
+    .then((blogs) => {
+      return res.status(200).json({ blogs });
+    })
+    .catch((error) => {
+      return res.status(500).json({ error: error.message });
+    });
+};

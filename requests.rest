@@ -6,16 +6,18 @@
 #     "password": "test"
 # }
 
-POST http://localhost:3000/create-blog
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjQ3NDE3ZmNjMTQ2MzY4Y2QzZDdhYSIsImlhdCI6MTcxMTQ3NjkzNSwiZXhwIjoxNzExNDgwNTM1fQ.Z8vUXXWHU7rJ9wi0lyZ5b1nd3ti8XkGtG7l8wAOJyBs
+# POST http://localhost:3000/create-blog
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjQ3NDE3ZmNjMTQ2MzY4Y2QzZDdhYSIsImlhdCI6MTcxMTQ3NjkzNSwiZXhwIjoxNzExNDgwNTM1fQ.Z8vUXXWHU7rJ9wi0lyZ5b1nd3ti8XkGtG7l8wAOJyBs
 
-{
- "title": "This is a content of blog 5",
- "banner": "https://example.com/image-url",
- "des": "this is a description",
- "content": {
-  "blocks": [1,2]
- },
- "tags": ["tag1","tag"]
-}
+# {
+#  "title": "This is a content of blog 5",
+#  "banner": "https://example.com/image-url",
+#  "des": "this is a description",
+#  "content": {
+#   "blocks": [1,2]
+#  },
+#  "tags": ["tag1","tag"]
+# }
+
+GET http://localhost:3000/latest-blogs
