@@ -109,7 +109,7 @@ exports.postCreateBlog = (req, res) => {
     });
 };
 
-exports.getLastestBlogs = (req, res) => {
+exports.getLatestBlogs = (req, res) => {
   let maxLimit = 5;
   Blog.find({ draft: false })
     .populate(

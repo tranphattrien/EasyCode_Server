@@ -9,6 +9,6 @@ router.post("/upload", upload, blogController.postUploadImage);
 
 router.post("/create-blog", verifyJWT, blogController.postCreateBlog);
 
-router.get("/latest-blogs",blogController.getLastestBlogs )
+router.get("/latest-blogs", blogController.getLatestBlogs);
 
 module.exports = router;
