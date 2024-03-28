@@ -114,7 +114,7 @@ exports.getLastestBlogs = (req, res) => {
   Blog.find({ draft: false })
     .populate(
       "author",
-      "personal_info.profile.img personal_info.username personal_info.fullname -_id"
+      "personal_info.profile_img personal_info.username personal_info.fullname -_id"
     )
     .sort({ publishedAt: -1 })
     .select("blog_id title des banner activity tags publishedAt -_id")
