@@ -20,4 +20,9 @@
 #  "tags": ["tag1","tag"]
 # }
 
-GET http://localhost:3000/latest-blogs
+POST http://localhost:3000/search-blogs
+Content-Type: application/json
+
+{
+  "tag": "vision board"
+}

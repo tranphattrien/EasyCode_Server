@@ -11,4 +11,8 @@ router.post("/create-blog", verifyJWT, blogController.postCreateBlog);
 
 router.get("/latest-blogs", blogController.getLatestBlogs);
 
+router.get("/trending-blogs", blogController.getTrendingBlogs);
+
+router.post("/search-blogs", blogController.postSearchBlog);
+
 module.exports = router;
