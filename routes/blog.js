@@ -9,10 +9,13 @@ router.post("/upload", upload, blogController.postUploadImage);
 
 router.post("/create-blog", verifyJWT, blogController.postCreateBlog);
 
-router.get("/latest-blogs", blogController.getLatestBlogs);
+router.post("/latest-blogs", blogController.postLatestBlogs);
 
 router.get("/trending-blogs", blogController.getTrendingBlogs);
 
 router.post("/search-blogs", blogController.postSearchBlog);
 
+router.post("/all-latest-blogs-count", blogController.postAllLatestBlogsCount);
+
+router.post("/search-blogs-count", blogController.postCategoryBlogsCount);
 module.exports = router;
