@@ -5,6 +5,7 @@ const cors = require("cors");
 const admin = require("firebase-admin");
 const authRoutes = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
+const userRoutes = require("./routes/user");
 const serviceAccountKey = require("./serviceAccountKey.json");
 
 const server = express();
@@ -30,3 +31,4 @@ mongoose
 
 server.use(authRoutes);
 server.use(blogRoutes);
+server.use(userRoutes);

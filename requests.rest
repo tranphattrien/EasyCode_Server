@@ -20,9 +20,9 @@
 #  "tags": ["tag1","tag"]
 # }
 
-POST http://localhost:3000/search-blogs
+POST http://localhost:3000/search-users
 Content-Type: application/json
 
 {
-  "tag": "vision board"
+  "query": "p"
 }
