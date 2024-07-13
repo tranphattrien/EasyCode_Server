@@ -18,4 +18,6 @@ router.post("/search-blogs", blogController.postSearchBlog);
 router.post("/all-latest-blogs-count", blogController.postAllLatestBlogsCount);
 
 router.post("/search-blogs-count", blogController.postCategoryBlogsCount);
+
+router.post("/get-blog", blogController.postGetBlog);
 module.exports = router;

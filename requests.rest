@@ -23,6 +23,10 @@
 POST http://localhost:3000/get-profile
 Content-Type: application/json
 
+# {
+#   "blog_id": "TEST-5-74a8fe"
+# }
+
 {
   "username": "trientranphat"
 }
