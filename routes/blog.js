@@ -20,4 +20,8 @@ router.post("/all-latest-blogs-count", blogController.postAllLatestBlogsCount);
 router.post("/search-blogs-count", blogController.postCategoryBlogsCount);
 
 router.post("/get-blog", blogController.postGetBlog);
+router.post("/like-blog", verifyJWT, blogController.postLikeBlog);
+
+router.post("/isliked-by-user", verifyJWT, blogController.postIsLikedByUser);
+
 module.exports = router;

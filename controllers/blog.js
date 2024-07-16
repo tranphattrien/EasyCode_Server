@@ -2,6 +2,7 @@ const { cloudinary } = require("../multer");
 const { v4: uuidv4 } = require("uuid");
 const Blog = require("../models/blog");
 const User = require("../models/user");
+const Notification = require("../models/Notification");
 
 exports.postUploadImage = (req, res) => {
   if (!req.file) {
@@ -254,6 +255,55 @@ exports.postGetBlog = (req, res) => {
       }
 
       return res.status(200).json({ blog });
+    })
+    .catch((err) => {
+      return res.status(500).json({ error: err.message });
+    });
+};
+
+exports.postLikeBlog = (req, res) => {
+  let user_id = req.user;
+
+  let { _id, islikedByUser } = req.body;
+
+  let incrementVal = !islikedByUser ? 1 : -1;
+
+  Blog.findOneAndUpdate(
+    { _id },
+    { $inc: { "activity.total_likes": incrementVal } }
+  ).then((blog) => {
+    if (!islikedByUser) {
+      let like = new Notification({
+        type: "like",
+        blog: _id,
+        notification_for: blog.author,
+        user: user_id
+      });
+      like.save().then((notification) => {
+        return res.status(200).json({ liked_by_user: true });
+      });
+    } else {
+      Notification.findOneAndDelete({
+        user: user_id,
+        blog: _id,
+        type: "like"
+      })
+        .then((data) => {
+          return res.status(200).json({ liked_by_user: false });
+        })
+        .catch((err) => {
+          return res.status(500).json({ error: err.message });
+        });
+    }
+  });
+};
+
+exports.postIsLikedByUser = (req, res) => {
+  let user_id = req.user;
+  let { _id } = req.body;
+  Notification.exists({ user: user_id, type: "like", blog: _id })
+    .then((result) => {
+      return res.status(200).json({ result });
     })
     .catch((err) => {
       return res.status(500).json({ error: err.message });
