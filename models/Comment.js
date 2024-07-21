@@ -28,7 +28,8 @@ const commentSchema = new Schema(
       ref: "users"
     },
     isReply: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     parent: {
       type: Schema.Types.ObjectId,

@@ -23,5 +23,8 @@ router.post("/get-blog", blogController.postGetBlog);
 router.post("/like-blog", verifyJWT, blogController.postLikeBlog);
 
 router.post("/isliked-by-user", verifyJWT, blogController.postIsLikedByUser);
-
+router.post("/add-comment", verifyJWT, blogController.postAddComment);
+router.post("/get-blog-comments", blogController.getBlogComment);
+router.post("/get-replies", blogController.getReplies);
+router.post("/delete-comment", verifyJWT, blogController.deleteComment);
 module.exports = router;
