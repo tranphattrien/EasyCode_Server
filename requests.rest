@@ -1,10 +1,4 @@
-# POST http://localhost:3000/signin
-# Content-Type: application/json
 
-# {
-#     "email": "test@test.com",
-#     "password": "test"
-# }
 
 # POST http://localhost:3000/create-blog
 # Content-Type: application/json
@@ -20,13 +14,19 @@
 #  "tags": ["tag1","tag"]
 # }
 
-POST http://localhost:3000/get-profile
-Content-Type: application/json
+# POST http://localhost:3000/change-password
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmVjZjcwMDFmYjBiNDE4ODk2YjhmMiIsImlhdCI6MTcyMTY0OTM0MCwiZXhwIjoxNzIxNjUyOTQwfQ.nvpkyBEbCNnS0svoAoDE74H_cLHlCF4vpjGNRO3uFck
 
 # {
-#   "blog_id": "TEST-5-74a8fe"
+#     "currentPassword": "Trien0306123??",
+#     "newPassword": "Trien0306??"
 # }
 
+POST http://localhost:3000/signin
+Content-Type: application/json
+
 {
-  "username": "trientranphat"
+  "email": "tranphattrien0306@gmail.com",
+  "password": "Trien0306??"
 }
