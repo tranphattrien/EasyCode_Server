@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const User = require("../models/user");
+const User = require("../models/User");
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
 const { getAuth } = require("firebase-admin/auth");

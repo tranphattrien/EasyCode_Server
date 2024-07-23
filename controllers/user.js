@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/User");
 
 exports.postSearchUser = (req, res) => {
   let { query } = req.body;

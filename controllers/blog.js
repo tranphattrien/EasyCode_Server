@@ -1,7 +1,7 @@
 const { cloudinary } = require("../multer");
 const { v4: uuidv4 } = require("uuid");
-const Blog = require("../models/blog");
-const User = require("../models/user");
+const Blog = require("../models/Blog");
+const User = require("../models/User");
 const Notification = require("../models/Notification");
 const Comment = require("../models/Comment");
 
